@@ -1,0 +1,53 @@
+Collecting FuzzyTM
+  Downloading FuzzyTM-2.0.9-py3-none-any.whl.metadata (7.9 kB)
+Requirement already satisfied: numpy in /home/viswesh/anaconda3/envs/coursework/lib/python3.10/site-packages (from FuzzyTM) (1.26.4)
+Requirement already satisfied: pandas in /home/viswesh/anaconda3/envs/coursework/lib/python3.10/site-packages (from FuzzyTM) (2.2.1)
+Requirement already satisfied: scipy in /home/viswesh/anaconda3/envs/coursework/lib/python3.10/site-packages (from FuzzyTM) (1.10.1)
+Collecting pyfume (from FuzzyTM)
+  Downloading pyFUME-0.3.4-py3-none-any.whl.metadata (9.7 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in /home/viswesh/.local/lib/python3.10/site-packages (from pandas->FuzzyTM) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /home/viswesh/anaconda3/envs/coursework/lib/python3.10/site-packages (from pandas->FuzzyTM) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /home/viswesh/anaconda3/envs/coursework/lib/python3.10/site-packages (from pandas->FuzzyTM) (2023.3)
+Collecting numpy (from FuzzyTM)
+  Downloading numpy-1.24.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.6 kB)
+Collecting simpful==2.12.0 (from pyfume->FuzzyTM)
+  Downloading simpful-2.12.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting fst-pso==1.8.1 (from pyfume->FuzzyTM)
+  Downloading fst-pso-1.8.1.tar.gz (18 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting pandas (from FuzzyTM)
+  Downloading pandas-1.5.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+Collecting miniful (from fst-pso==1.8.1->pyfume->FuzzyTM)
+  Downloading miniful-0.0.6.tar.gz (2.8 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: six>=1.5 in /home/viswesh/anaconda3/envs/coursework/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas->FuzzyTM) (1.16.0)
+Downloading FuzzyTM-2.0.9-py3-none-any.whl (31 kB)
+Downloading pyFUME-0.3.4-py3-none-any.whl (60 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 569.3 kB/s eta 0:00:00
+Downloading numpy-1.24.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.3/17.3 MB 15.9 MB/s eta 0:00:00
+Downloading pandas-1.5.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.1/12.1 MB 15.1 MB/s eta 0:00:00
+Downloading simpful-2.12.0-py3-none-any.whl (24 kB)
+Building wheels for collected packages: fst-pso, miniful
+  Building wheel for fst-pso (setup.py): started
+  Building wheel for fst-pso (setup.py): finished with status 'done'
+  Created wheel for fst-pso: filename=fst_pso-1.8.1-py3-none-any.whl size=20431 sha256=b75512ba06f0f188d0355df8f915477b0c7f28b8dc319c4a472599571334df90
+  Stored in directory: /home/viswesh/.cache/pip/wheels/2d/1b/42/88a19f6b3896c2230d5053832f208976cddf70625885201d06
+  Building wheel for miniful (setup.py): started
+  Building wheel for miniful (setup.py): finished with status 'done'
+  Created wheel for miniful: filename=miniful-0.0.6-py3-none-any.whl size=3507 sha256=43d48804b46e181391397e22ba3b95e71f0bac8f69748eaad635af42305ca6ec
+  Stored in directory: /home/viswesh/.cache/pip/wheels/5b/86/8f/7bb7f6472e2c84de7addfc1a5cd7fd647f00d8fb640da9ea9a
+Successfully built fst-pso miniful
+Installing collected packages: numpy, pandas, simpful, miniful, fst-pso, pyfume, FuzzyTM
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.4
+    Uninstalling numpy-1.26.4:
+      Successfully uninstalled numpy-1.26.4
+  Attempting uninstall: pandas
+    Found existing installation: pandas 2.2.1
+    Uninstalling pandas-2.2.1:
+      Successfully uninstalled pandas-2.2.1
+Successfully installed FuzzyTM-2.0.9 fst-pso-1.8.1 miniful-0.0.6 numpy-1.24.4 pandas-1.5.3 pyfume-0.3.4 simpful-2.12.0
