@@ -121,7 +121,9 @@ class ParserModel(nn.Module):
 
         x = torch.Tensor(embedding_list)
         '''
+
         x = torch.tensor([torch.index_select(self.embeddings, 0, w[i]).view(-1).detach().numpy() for i in range(w.shape[0])])
+        
         ### END YOUR CODE
         
         return x
