@@ -8,6 +8,7 @@ Haoshen Hong <haoshen@stanford.edu>
 """
 
 import sys
+import copy
 
 class PartialParse(object):
     def __init__(self, sentence):
@@ -119,6 +120,22 @@ def minibatch_parse(sentences, model, batch_size):
     ###             contains references to the same objects. Thus, you should NOT use the `del` operator
     ###             to remove objects from the `unfinished_parses` list. This will free the underlying memory that
     ###             is being accessed by `partial_parses` and may cause your code to crash.
+
+    partial_parses = [PartialParse(sentence = sent) for sent in sentences]
+    unfinished_parses = copy.copy(partial_parses)
+
+    while(len(unfinished_parses) != 0):
+
+        mini_batch_parses = unfinished_parses[:batch_size]
+        transitions = model.predict(mini_batch_parses)
+
+        for transition, partial_parse in zip(transitions, mini_batch_parses):
+            partial_parse.parse_step(transition)
+
+            if (len(partial_parse.buffer) == 0 and len(partial_parse.stack) ==1):
+                unfinished_parses.remove(partial_parse)
+
+    dependencies = [parse.dependencies for parse in partial_parses]
 
 
     ### END YOUR CODE
