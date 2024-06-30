@@ -110,7 +110,7 @@ class ParserModel(nn.Module):
         ###     View: https://pytorch.org/docs/stable/tensors.html#torch.Tensor.view
         ###     Flatten: https://pytorch.org/docs/stable/generated/torch.flatten.html
 
-        ''' (initially wrote this, but found a better one liner solution)
+
         embedding_list = []
 
         for i in range(w.shape[0]):
@@ -120,9 +120,7 @@ class ParserModel(nn.Module):
             embedding_list.append(tens)
 
         x = torch.Tensor(embedding_list)
-        '''
-
-        x = torch.tensor([torch.index_select(self.embeddings, 0, w[i]).view(-1).detach().numpy() for i in range(w.shape[0])])
+      
         
         ### END YOUR CODE
         
