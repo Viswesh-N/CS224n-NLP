@@ -1,0 +1,205 @@
+{
+    "example_source": [
+        "▁我还",
+        "澄清",
+        "了",
+        "在该",
+        "会议上",
+        "提出的",
+        "若干",
+        "事项",
+        "。"
+    ],
+    "example_target": [
+        "<s>",
+        "▁i",
+        "▁was",
+        "▁able",
+        "▁to",
+        "▁provide",
+        "▁clarification",
+        "▁on",
+        "▁some",
+        "▁of",
+        "▁the",
+        "▁matters",
+        "▁which",
+        "▁were",
+        "▁raised",
+        "▁at",
+        "▁that",
+        "▁meeting",
+        ".",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁there",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -16.98668098449707
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -17.253616333007812
+        },
+        {
+            "hypothesis": [
+                "▁there",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "."
+            ],
+            "score": -17.414569854736328
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "."
+            ],
+            "score": -17.61150360107422
+        },
+        {
+            "hypothesis": [
+                "▁he",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -17.66392707824707
+        },
+        {
+            "hypothesis": [
+                "▁there",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "▁of",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -23.56548500061035
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "▁of",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -23.7663631439209
+        },
+        {
+            "hypothesis": [
+                "▁there",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "▁for",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -23.799196243286133
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "▁for",
+                "▁the",
+                "▁united",
+                "▁nations",
+                "."
+            ],
+            "score": -24.009000778198242
+        },
+        {
+            "hypothesis": [
+                "▁there",
+                "▁is",
+                "▁a",
+                "▁result",
+                "▁of",
+                "▁the",
+                "▁secretary",
+                "-",
+                "general",
+                "▁of",
+                "▁the",
+                "▁united",
+                "▁states",
+                "."
+            ],
+            "score": -24.658327102661133
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjQtMDctMTRUMjE6MDQ6NDQuMDE2NjAzIiwgImgiOiAidmlzd2VzaC1ocCIsICJ1IjogInZpc3dlc2gifQ=="
+}

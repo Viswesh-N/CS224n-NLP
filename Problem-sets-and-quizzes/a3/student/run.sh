@@ -17,3 +17,4 @@ elif [ "$1" = "tensorboard" ]; then
 else
 	echo "Invalid Option Selected"
 fi
+
