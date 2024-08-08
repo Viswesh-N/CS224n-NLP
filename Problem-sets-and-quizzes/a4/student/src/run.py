@@ -103,7 +103,11 @@ if args.function == 'pretrain':
     # writer=writer
 
     ### YOUR CODE HERE ###
-    pass
+    tconf = trainer.TrainerConfig(max_epochs=650, batch_size=128, learning_rate=6e-3,
+                                  lr_decay=True, warmup_tokens=512*20, final_tokens=200*len(pretrain_dataset)*block_size,
+                                  num_workers=4, ckpt_path=args.writing_params_path)
+    trainer = trainer.Trainer(model, pretrain_dataset, None, tconf)
+    trainer.train()
     ### END YOUR CODE ###
 elif args.function == 'finetune':
     assert args.writing_params_path is not None
