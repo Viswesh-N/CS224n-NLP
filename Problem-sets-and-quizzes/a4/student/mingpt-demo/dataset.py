@@ -8,8 +8,7 @@ class CharDataset(Dataset):
     def __init__(self, data, block_size):
         chars = sorted(list(set(data)))
         data_size, vocab_size = len(data), len(chars)
-        print(chars)
-        print(chars[:10], 'data has %d characters, %d unique.' % (data_size, vocab_size))
+        print('data has %d characters, %d unique.' % (data_size, vocab_size))
         
         self.stoi = { ch:i for i,ch in enumerate(chars) }
         self.itos = { i:ch for i,ch in enumerate(chars) }

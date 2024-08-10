@@ -38,7 +38,11 @@ def precompute_rotary_emb(dim, max_positions):
     rope_cache = None
     # TODO: [part g]
     ### YOUR CODE HERE ###
-    pass
+    theta = 10000.0 ** (-torch.arange(0, dim, 2).float() / dim)
+    position = torch.arange(max_positions).unsqueeze(1)
+    rope_cache = torch.zeros(max_positions, dim // 2, 2)
+    rope_cache[:, :, 0] = torch.cos(position * theta)
+    rope_cache[:, :, 1] = torch.sin(position * theta)
     ### END YOUR CODE ###
     return rope_cache
 
@@ -58,7 +62,13 @@ def apply_rotary_emb(x, rope_cache):
 
     rotated_x = None
     ### YOUR CODE HERE ###
-    pass
+    seq_len = x.shape[-2]
+    dim = x.shape[-1]
+    x_complex = torch.view_as_complex(x.float().reshape(*x.shape[:-1], -1, 2))
+    cos = rope_cache[:seq_len, :, 0].unsqueeze(0).unsqueeze(0)
+    sin = rope_cache[:seq_len, :, 1].unsqueeze(0).unsqueeze(0)
+    rotated_x = torch.view_as_real(x_complex * cos + x_complex.imag * sin + 1j * (x_complex.imag * cos - x_complex.real * sin))
+    rotated_x = rotated_x.reshape(*x.shape)
     ### END YOUR CODE ###
     return rotated_x
 
@@ -86,7 +96,7 @@ class CausalSelfAttention(nn.Module):
             # Hint: The maximum sequence length is given by config.block_size.
             rope_cache = None
             ### YOUR CODE HERE ###
-            pass
+            rope_cache = precompute_rotary_emb(config.n_embd // config.n_head, config.block_size)
             ### END YOUR CODE ###
 
             self.register_buffer("rope_cache", rope_cache)
@@ -101,6 +111,7 @@ class CausalSelfAttention(nn.Module):
                                      .view(1, 1, config.block_size, config.block_size))
         self.n_head = config.n_head
 
+
     def forward(self, x):
         B, T, C = x.size()
 
@@ -112,7 +123,8 @@ class CausalSelfAttention(nn.Module):
         if self.rope:
             # TODO: [part g] Apply RoPE to the query and key.
             ### YOUR CODE HERE ###
-            pass
+            q = apply_rotary_emb(q, self.rope_cache)
+            k = apply_rotary_emb(k, self.rope_cache)
             ### END YOUR CODE ###
 
         # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)

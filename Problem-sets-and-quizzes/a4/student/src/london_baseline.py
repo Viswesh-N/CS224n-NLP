@@ -12,10 +12,8 @@ def main():
 
     # Compute accuracy in the range [0.0, 100.0]
     ### YOUR CODE HERE ###
-    total, correct = utils.evaluate_places('birth_dev.tsv', ['London'] * len([line for line in open('birth_dev.tsv').read().split('\n') if line]))
+    pass
     ### END YOUR CODE ###
-
-    accuracy = total*100/correct
 
     return accuracy
 
